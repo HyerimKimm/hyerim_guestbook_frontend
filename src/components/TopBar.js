@@ -5,7 +5,7 @@ export const TopBarDesign = styled.header`
     background-color: lightblue;
     margin: 0;
     padding: 10px;
-    position: fixed;
+    //position: fixed;
     height: 55px;
     width: 100%;
     font-size: 2rem;
