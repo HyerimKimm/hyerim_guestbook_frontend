@@ -71,7 +71,7 @@ export const SubmitButton = styled.button`
 export const InsertNewComment = () => {
     const [name, setName] = useState('');
     const [content, setContent] = useState('');
-    const [selectedImage, setselectedImage] = useState([profileDefault,null]);
+    const [selectedImage, setSelectedImage] = useState([profileDefault,null]);
     const fileInput = useRef(null);
 
     //프로필이미지를 누르면 동작하는 메소드
@@ -81,7 +81,7 @@ export const InsertNewComment = () => {
     //이미지를 변경했을 때 실행됨
     const onChangeProfile = (e) => {
         console.log(e.target.files[0]);
-        setselectedImage([URL.createObjectURL(e.target.files[0]),e.target.files[0]]);
+        setSelectedImage([URL.createObjectURL(e.target.files[0]),e.target.files[0]]);
     }
     //이름 입력값을 변경할 때 실행됨
     const onChangeName = (e) => {
@@ -98,7 +98,6 @@ export const InsertNewComment = () => {
             content:content,
             profileImage:selectedImage[1]
         });
-        console.log(response);
     }
 
     return (
