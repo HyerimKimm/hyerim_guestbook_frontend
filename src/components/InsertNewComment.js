@@ -61,14 +61,16 @@ export const SubmitButton = styled.button`
     height: 2rem;
     cursor: pointer;
     padding: 10px;
+    border-style: none;
     border-radius: 20px;
+    box-shadow: 0 0 4px grey;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     font-family: 'Noto Sans KR', sans-serif;
 `;
-export const InsertNewComment = () => {
+export const InsertNewComment = ({data, setData}) => {
     const [name, setName] = useState('');
     const [content, setContent] = useState('');
     const [selectedImage, setSelectedImage] = useState([profileDefault,null]);
@@ -93,11 +95,13 @@ export const InsertNewComment = () => {
     }
     //등록버튼 누르면 실행됨
     const onClickButton = async (e) => {
+        console.log(selectedImage[1]);
         const response = await postNewGuestbookContent({
             name:name,
             content:content,
             profileImage:selectedImage[1]
         });
+        setData([...data,response]);
     }
 
     return (

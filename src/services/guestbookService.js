@@ -9,9 +9,11 @@ export const postNewGuestbookContent = async ({name,content,profileImage}) => {
         profileImage: profileImage
     };
     const response = await axios.post(url, data);
-    console.log(response.data);
+    return response.data;
 }
 
 export const getAllGuestbookContents = async () => {
-
+    const url = rootUrl;
+    const response = await axios.get(url);
+    return response.data;
 }

@@ -1,10 +1,23 @@
 import React from 'react';
+import { Comment } from './Comment';
+import { styled } from 'styled-components';
 
-const Comments = () => {
+const CommentsContainer = styled.main`
+    box-sizing: border-box;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+`
+
+const Comments = ({data}) => {
     return (
-        <div>
-            
-        </div>
+    <CommentsContainer>
+    {
+        data.map((e)=><Comment key={e._id} data={e} />)
+    }
+    </CommentsContainer>
     );
 };
 

@@ -14,6 +14,9 @@ export const TopBarDesign = styled.header`
     justify-content: center;
     align-items: center;
     font-family: 'Poor Story', cursive;
+    position: sticky;
+    top: 0;
+    left: 0;
 `;
 
 export const TopBar = ({title}) => {
