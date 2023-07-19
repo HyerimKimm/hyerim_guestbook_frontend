@@ -1,7 +1,8 @@
 import React from 'react';
 import { styled } from 'styled-components';
-import { InputContainer, InsertNewCommentSection, ProfileAvatar } from './InsertNewComment';
+// import { InputContainer, InsertNewCommentSection, ProfileAvatar } from './InsertNewComment';
 import defaultProfile from '../assets/images/profile_default.png'
+import { InsertNewCommentSection, ProfileAvatar } from './InsertNewComment.style';
 
 export const ProfileSection = styled.section`
     margin: 10px 20px;
