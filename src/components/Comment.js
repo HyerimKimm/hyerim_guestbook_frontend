@@ -32,13 +32,12 @@ export const ContentContainer = styled.p`
     font-family: 'Noto Sans KR', sans-serif;
 `
 export const Comment = ({data}) => {
-    console.log(data)
     return (
         <InsertNewCommentSection>
             <ProfileSection>
                 <ProfileAvatar 
                     aria-label='프로필이미지'
-                    src={data.profileImage===null?data.profileImage:defaultProfile}/>
+                    src={defaultProfile}/>
                 <NameBox>{data.name}</NameBox>
             </ProfileSection>
             <InfoContainer>

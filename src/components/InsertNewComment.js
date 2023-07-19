@@ -1,9 +1,10 @@
 import React, { useRef, useState } from 'react';
-import { postNewGuestbookContent } from '../services/guestbookService'
+import { getAllGuestbookContents, postNewGuestbookContent } from '../services/guestbookService'
 //기본 프로필이미지
 import profileDefault from '../assets/images/profile_default.png'
 import { InsertNewCommentSection, ProfileAvatar, ProfileInput, InputContainer, NameInput, ContentInput, SubmitButton } from './InsertNewComment.style';
-import { getStorage, ref, uploadBytes, listAll, getDownloadURL } from "firebase/storage"
+import { getStorage, ref, uploadBytes, listAll, getDownloadURL } from "firebase/storage";
+import { storage } from '../services/firebase';
 
 export const InsertNewComment = ({data, setData}) => {
     const [name, setName] = useState('');
@@ -29,12 +30,27 @@ export const InsertNewComment = ({data, setData}) => {
     }
     //등록버튼 누르면 실행됨
     const onClickButton = async (e) => {
-        const response = await postNewGuestbookContent({
-            name:name,
-            content:content,
-            profileImage:selectedImage[1]
-        });
-        setData([...data,response]);
+        const file = selectedImage[1];
+
+        if(file!==null && file!==undefined) {
+            const storageRef = ref(storage, `uploads/${Date.now()}_${file.name}`);
+            const uploadTask = uploadBytes(storageRef,file);
+
+            uploadTask.then((snapshot)=>{
+                getDownloadURL(snapshot.ref).then((downloadURL)=>{
+                    postNewGuestbookContent({
+                        name:name,
+                        content:content,
+                        profileImage: downloadURL
+                    })
+                    .then(()=>{
+                        getAllGuestbookContents().then((res)=>{
+                            setData([ ...data, ...res.data ])
+                        })
+                    });
+                })
+            })
+        }
     }
 
     return (

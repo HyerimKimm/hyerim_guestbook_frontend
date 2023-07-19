@@ -15,7 +15,7 @@ const Comments = ({data}) => {
     return (
     <CommentsContainer>
     {
-        data.map((e)=><Comment key={e._id} data={e} />)
+        data.map((e,idx)=><Comment key={idx} data={e} />)
     }
     </CommentsContainer>
     );
