@@ -12,6 +12,7 @@ export const InsertNewCommentSection = styled.section`
     align-items: center;
     border-radius: 10px;
     box-shadow: 2px 2px 2px 2px rgba(190,190,190,0.5);
+    position: sticky;
 `;
 //프로필 이미지 디자인
 export const ProfileAvatar = styled.img`

@@ -5,7 +5,6 @@ export const TopBarDesign = styled.header`
     background-color: lightblue;
     margin: 0;
     padding: 10px;
-    //position: fixed;
     height: 55px;
     width: 100%;
     font-size: 2rem;
@@ -17,6 +16,7 @@ export const TopBarDesign = styled.header`
     position: sticky;
     top: 0;
     left: 0;
+    box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.10);
 `;
 
 export const TopBar = ({title}) => {

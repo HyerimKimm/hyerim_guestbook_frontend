@@ -3,6 +3,7 @@ import { postNewGuestbookContent } from '../services/guestbookService'
 //기본 프로필이미지
 import profileDefault from '../assets/images/profile_default.png'
 import { InsertNewCommentSection, ProfileAvatar, ProfileInput, InputContainer, NameInput, ContentInput, SubmitButton } from './InsertNewComment.style';
+import { getStorage, ref, uploadBytes, listAll, getDownloadURL } from "firebase/storage"
 
 export const InsertNewComment = ({data, setData}) => {
     const [name, setName] = useState('');
