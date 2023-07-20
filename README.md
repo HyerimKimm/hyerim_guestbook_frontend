@@ -12,6 +12,7 @@
  -> Node.js 서버가 4999 포트에서 구동되면 성공입니다.
 2. hyerim_guestbook_frontend 에서 프론트앤드 파일을 다운로드 받은 후, npm run start를 해주세요.
  -> 구동되면 성공입니다.
+   
 🚨 MongoDB의 Network Access에 등록되지 않은 IP로는 DB에 접근할 수 없습니다. 🚨
 
 # 문서
