@@ -1,7 +1,8 @@
 import React from 'react';
 import { styled } from 'styled-components';
-import { InputContainer, InsertNewCommentSection, ProfileAvatar } from './InsertNewComment';
+// import { InputContainer, InsertNewCommentSection, ProfileAvatar } from './InsertNewComment';
 import defaultProfile from '../assets/images/profile_default.png'
+import { InsertNewCommentSection, ProfileAvatar } from './InsertNewComment.style';
 
 export const ProfileSection = styled.section`
     margin: 10px 20px;
@@ -31,13 +32,12 @@ export const ContentContainer = styled.p`
     font-family: 'Noto Sans KR', sans-serif;
 `
 export const Comment = ({data}) => {
-    console.log(data)
     return (
         <InsertNewCommentSection>
             <ProfileSection>
                 <ProfileAvatar 
                     aria-label='프로필이미지'
-                    src={data.profileImage===null?data.profileImage:defaultProfile}/>
+                    src={data.profileImage?data.profileImage:defaultProfile}/>
                 <NameBox>{data.name}</NameBox>
             </ProfileSection>
             <InfoContainer>
