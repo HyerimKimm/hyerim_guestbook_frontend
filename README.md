@@ -2,8 +2,10 @@
  Node.js, Firebase, MongoDB 등 백앤드 부분을 공부하면서 적용해보기 위해 진행한 토이 프로젝트입니다.
  - 실행 결과1. 클라이언트 웹앱 UI
 <img src="https://github.com/HyerimKimm/hyerim_guestbook_frontend/assets/50258232/893fce49-692a-460d-a1e5-000ddf2a2681" width="600px"/>
+
  - 실행결과2. MongoDB Atlas Database
 <img src="https://github.com/HyerimKimm/hyerim_guestbook_frontend/assets/50258232/141c1cf9-9d4b-4943-bcc6-8a63a7bf04f6" width="600px"/>
+
  - 실행결과3. Firebase Storage
 <img src="https://github.com/HyerimKimm/hyerim_guestbook_frontend/assets/50258232/0e6e6e41-59ba-4477-809e-0d30d5e4fca5" width="600px"/>
 
@@ -13,9 +15,9 @@
  |React.js|Node.js|MongoDB|Figma|Firebase|
  
 # 실행 방법
-1. hyerim_guestbook_backend 에서 백앤드 파일을 다운로드 받은 후, npm run start를 해주세요.
+1. <a href="https://github.com/HyerimKimm/hyerim_guestbook_backend.git">hyerim_guestbook_backend</a> 에서 백앤드 파일을 다운로드 받은 후, npm run start를 해주세요.
  -> Node.js 서버가 4999 포트에서 구동되면 성공입니다.
-2. hyerim_guestbook_frontend 에서 프론트앤드 파일을 다운로드 받은 후, npm run start를 해주세요.
+2. <a href="https://github.com/HyerimKimm/hyerim_guestbook_frontend.git">hyerim_guestbook_frontend</a> 에서 프론트앤드 파일을 다운로드 받은 후, npm run start를 해주세요.
  -> 구동되면 성공입니다.
    
 🚨 MongoDB의 Network Access에 등록되지 않은 IP로는 DB에 접근할 수 없습니다. 🚨
