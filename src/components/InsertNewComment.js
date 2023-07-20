@@ -28,6 +28,12 @@ export const InsertNewComment = ({data, setData}) => {
     const onChangeContent = (e) => {
         setContent(e.target.value);
     }
+    //입력란 초기화
+    const inputClear = (e) => {
+        setName('');
+        setContent('');
+        setSelectedImage([profileDefault,null]);
+    }
     //등록버튼 누르면 실행됨
     const onClickButton = async (e) => {
         const file = selectedImage[1];
@@ -45,7 +51,8 @@ export const InsertNewComment = ({data, setData}) => {
                     })
                     .then(()=>{
                         getAllGuestbookContents().then((res)=>{
-                            setData([ ...data, ...res.data ])
+                            setData([ ...res.data ])
+                            inputClear();
                         })
                     });
                 })

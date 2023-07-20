@@ -20,6 +20,7 @@ export const ProfileAvatar = styled.img`
     height: 10vh;
     border-radius: 50%;
     cursor: pointer;
+    box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.25);
 `;
 //프로필 이미지 input
 export const ProfileInput = styled.input`

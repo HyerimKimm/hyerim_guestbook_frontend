@@ -10,12 +10,18 @@ const CommentsContainer = styled.main`
     justify-content: center;
     align-items: center;
 `
+const NoDataDesign = styled.div`
+    box-sizing: border-box;
+    margin-top: 10px;
+    color: grey
+`
 
 const Comments = ({data}) => {
     return (
     <CommentsContainer>
     {
-        data.map((e,idx)=><Comment key={idx} data={e} />)
+        data.length===0?<NoDataDesign>방명록에 글이 없습니다.</NoDataDesign>
+        :data.map((e,idx)=><Comment key={idx} data={e} />)
     }
     </CommentsContainer>
     );

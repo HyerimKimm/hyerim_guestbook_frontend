@@ -37,7 +37,7 @@ export const Comment = ({data}) => {
             <ProfileSection>
                 <ProfileAvatar 
                     aria-label='프로필이미지'
-                    src={defaultProfile}/>
+                    src={data.profileImage?data.profileImage:defaultProfile}/>
                 <NameBox>{data.name}</NameBox>
             </ProfileSection>
             <InfoContainer>
